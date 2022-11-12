@@ -17,7 +17,7 @@ entity bit_serial_encoder IS
   PORT (nGRst: IN STD_LOGIC; 
 		  clk:   IN STD_LOGIC;
 		  mIn:   IN STD_LOGIC;
-		  x:	  OUT STD_LOGIC);
+		  x:	  OUT STD_LOGIC_VECTOR(7 downto 0));
 end bit_serial_encoder;
 
 library ieee;
@@ -73,7 +73,7 @@ architecture structure of bit_serial_encoder is
 	signal s_k0,s_k1,s_k2,s_k3,s_k4,s_k5,s_k6,s_k7: STD_LOGIC;
 	signal s_andOut0,s_andOut1,s_andOut2,s_andOut3,s_andOut4,s_andOut5,s_andOut6,s_andOut7: STD_LOGIC;
 
-	signal s_regQ0,s_regQ1,s_regQ2,s_regQ3,s_regQ4,s_regQ5,s_regQ6,s_regQ7 : STD_LOGIC;
+	signal s_regQ0,s_regQ1,s_regQ2,s_regQ3,s_regQ4,s_regQ5,s_regQ6,s_regQ7 : STD_LOGIC := '0';
 	--Saida dos XORs
 	signal s_xorOut0 : STD_LOGIC;
 	signal s_xorOut1 : STD_LOGIC;
@@ -169,10 +169,6 @@ architecture structure of bit_serial_encoder is
 		reg6:flipFlopDPET PORT MAP (s_clk,s_xorOut6,iNset,iNRst,s_regQ6);
 		reg7:flipFlopDPET PORT MAP (s_clk,s_xorOut7,iNset,iNRst,s_regQ7);
 		
-		
-		
-		reg_par: ParReg_8bit PORT MAP (iNset, s_clk0,s_regParIn, s_regParOut);
-
 		bincount: binCounter_3bit PORT MAP (iNRst, s_clk,s_state);
 
 		state_machine: process(s_state, s_regQ0, s_regQ1, s_regQ2, s_regQ3, s_regQ4, s_regQ5, s_regQ6, s_regQ7, iNSet, iNRst, s_clk0, s_romIn)
@@ -209,4 +205,5 @@ architecture structure of bit_serial_encoder is
 			end case;
 		end process state_machine;
 			
+		reg_par: ParReg_8bit PORT MAP (iNset, s_clk0,s_regParIn, x);
 end structure;

@@ -1,4 +1,4 @@
-Fitter Status : Successful - Sat Nov 12 11:29:24 2022
+Fitter Status : Successful - Sat Nov 12 22:20:31 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : bit_serial_encoder
 Top-level Entity Name : bit_serial_encoder
@@ -7,7 +7,7 @@ Device : 5CGXFC7C7F23C8
 Timing Models : Final
 Logic utilization (in ALMs) : 1 / 56,480 ( < 1 % )
 Total registers : 0
-Total pins : 4 / 268 ( 1 % )
+Total pins : 11 / 268 ( 4 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 7,024,640 ( 0 % )
 Total RAM Blocks : 0 / 686 ( 0 % )
