@@ -1,0 +1,555 @@
+|decoder
+y[0] => gateXor2:c00_calc.x1
+y[0] => gateXor2:c10_calc.x1
+y[0] => gateXor2:c20_calc.x1
+y[1] => gateXor2:c00_calc.x2
+y[1] => gateXor2:c11_calc.x1
+y[1] => gateXor2:c21_calc.x1
+y[2] => gateXor2:c01_calc.x1
+y[2] => gateXor2:c10_calc.x2
+y[2] => gateXor2:c22_calc.x1
+y[3] => gateXor2:c01_calc.x2
+y[3] => gateXor2:c11_calc.x2
+y[3] => gateXor2:c23_calc.x1
+y[4] => gateXor2:c02_calc.x1
+y[4] => gateXor2:c12_calc.x1
+y[4] => gateXor2:c20_calc.x2
+y[5] => gateXor2:c02_calc.x2
+y[5] => gateXor2:c13_calc.x1
+y[5] => gateXor2:c21_calc.x2
+y[6] => gateXor2:c03_calc.x1
+y[6] => gateXor2:c12_calc.x2
+y[6] => gateXor2:c22_calc.x2
+y[7] => gateXor2:c03_calc.x2
+y[7] => gateXor2:c13_calc.x2
+y[7] => gateXor2:c23_calc.x2
+m[0] <= gateAnd2:m0.y
+m[1] <= gateAnd2:m1.y
+m[2] <= gateAnd2:m2.y
+valid <= gateNot:valid_out.y
+
+
+|decoder|gateXor2:c00_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:c01_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:c02_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:c03_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_1
+c0 => gateOr2:xorC1C0.x2
+c0 => gateAnd2:andC1C0.x2
+c1 => gateOr2:xorC1C0.x1
+c1 => gateAnd2:andC1C0.x1
+c2 => gateAnd2:andC3C2.x2
+c2 => gateOr2:xorC3C2.x2
+c3 => gateAnd2:andC3C2.x1
+c3 => gateOr2:xorC3C2.x1
+mOut <= gateOr2:finalxor.y
+
+
+|decoder|mnCalc:m0_1|gateAnd2:andC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_1|gateOr2:xorC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_1|gateAnd2:andC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_1|gateOr2:xorC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_1|gateAnd2:lefand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_1|gateAnd2:rightand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_1|gateOr2:finalxor
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c00_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c01_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c02_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c03_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_0
+c0 => gateOr2:xorC1C0.x2
+c0 => gateAnd2:andC1C0.x2
+c1 => gateOr2:xorC1C0.x1
+c1 => gateAnd2:andC1C0.x1
+c2 => gateAnd2:andC3C2.x2
+c2 => gateOr2:xorC3C2.x2
+c3 => gateAnd2:andC3C2.x1
+c3 => gateOr2:xorC3C2.x1
+mOut <= gateOr2:finalxor.y
+
+
+|decoder|mnCalc:m0_0|gateAnd2:andC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_0|gateOr2:xorC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_0|gateAnd2:andC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_0|gateOr2:xorC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_0|gateAnd2:lefand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_0|gateAnd2:rightand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m0_0|gateOr2:finalxor
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateOr2:m0_1_xor_m0_0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:m0_e
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:c10_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:c11_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:c12_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:c13_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_1
+c0 => gateOr2:xorC1C0.x2
+c0 => gateAnd2:andC1C0.x2
+c1 => gateOr2:xorC1C0.x1
+c1 => gateAnd2:andC1C0.x1
+c2 => gateAnd2:andC3C2.x2
+c2 => gateOr2:xorC3C2.x2
+c3 => gateAnd2:andC3C2.x1
+c3 => gateOr2:xorC3C2.x1
+mOut <= gateOr2:finalxor.y
+
+
+|decoder|mnCalc:m1_1|gateAnd2:andC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_1|gateOr2:xorC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_1|gateAnd2:andC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_1|gateOr2:xorC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_1|gateAnd2:lefand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_1|gateAnd2:rightand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_1|gateOr2:finalxor
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c10_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c11_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c12_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c13_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_0
+c0 => gateOr2:xorC1C0.x2
+c0 => gateAnd2:andC1C0.x2
+c1 => gateOr2:xorC1C0.x1
+c1 => gateAnd2:andC1C0.x1
+c2 => gateAnd2:andC3C2.x2
+c2 => gateOr2:xorC3C2.x2
+c3 => gateAnd2:andC3C2.x1
+c3 => gateOr2:xorC3C2.x1
+mOut <= gateOr2:finalxor.y
+
+
+|decoder|mnCalc:m1_0|gateAnd2:andC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_0|gateOr2:xorC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_0|gateAnd2:andC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_0|gateOr2:xorC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_0|gateAnd2:lefand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_0|gateAnd2:rightand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m1_0|gateOr2:finalxor
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:m1_1_xor_m1_0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:m1_e
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:c20_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:c21_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:c22_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:c23_calc
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_1
+c0 => gateOr2:xorC1C0.x2
+c0 => gateAnd2:andC1C0.x2
+c1 => gateOr2:xorC1C0.x1
+c1 => gateAnd2:andC1C0.x1
+c2 => gateAnd2:andC3C2.x2
+c2 => gateOr2:xorC3C2.x2
+c3 => gateAnd2:andC3C2.x1
+c3 => gateOr2:xorC3C2.x1
+mOut <= gateOr2:finalxor.y
+
+
+|decoder|mnCalc:m2_1|gateAnd2:andC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_1|gateOr2:xorC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_1|gateAnd2:andC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_1|gateOr2:xorC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_1|gateAnd2:lefand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_1|gateAnd2:rightand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_1|gateOr2:finalxor
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c20_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c21_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c22_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:c23_calc_not
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_0
+c0 => gateOr2:xorC1C0.x2
+c0 => gateAnd2:andC1C0.x2
+c1 => gateOr2:xorC1C0.x1
+c1 => gateAnd2:andC1C0.x1
+c2 => gateAnd2:andC3C2.x2
+c2 => gateOr2:xorC3C2.x2
+c3 => gateAnd2:andC3C2.x1
+c3 => gateOr2:xorC3C2.x1
+mOut <= gateOr2:finalxor.y
+
+
+|decoder|mnCalc:m2_0|gateAnd2:andC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_0|gateOr2:xorC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_0|gateAnd2:andC1C0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_0|gateOr2:xorC3C2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_0|gateAnd2:lefand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_0|gateAnd2:rightand
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|mnCalc:m2_0|gateOr2:finalxor
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:m2_1_xor_m2_0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:m2_e
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:m0e_xor_m1e
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateXor2:xor_valid
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateNot:valid_out
+x => y.DATAIN
+y <= x.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateAnd2:m0
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateAnd2:m1
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder|gateAnd2:m2
+x1 => y.IN0
+x2 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
