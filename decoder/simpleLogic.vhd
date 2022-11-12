@@ -93,11 +93,24 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
 ENTITY concatenator4to1 IS
-  PORT (x1, x2,x3,x4: IN STD_LOGIC;
+  PORT (x0,x1,x2,x3: IN STD_LOGIC;
         y:      OUT STD_LOGIC_VECTOR(3 downto 0));
 END concatenator4to1;
 
 ARCHITECTURE logicFunction OF concatenator4to1  IS
 BEGIN
-  y <= x1 & x2 & x3 & x4;
+  y <= x0 & x1 & x2 & x3;
+END logicFunction;
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY concatenator8to1 IS
+  PORT (x0,x1,x2,x3,x4,x5,x6,x7: IN STD_LOGIC;
+        y:      OUT STD_LOGIC_VECTOR(7 downto 0));
+END concatenator8to1;
+
+ARCHITECTURE logicFunction OF concatenator8to1  IS
+BEGIN
+  y <= x0 & x1 & x2 & x3 & x4 & x5 & x6 & x7;
 END logicFunction;

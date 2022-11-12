@@ -10,26 +10,26 @@ z2
 cModel Technology
 Z0 dC:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/decoder/simulation/qsim
 Edecoder
-Z1 w1668276015
+Z1 w1668278248
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx9 cycloneiv 19 cycloneiv_atom_pack 0 22 ]lnLY_M[kb3fWjbKaDc;_1
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z7 DPx9 cycloneiv 20 cycloneiv_components 0 22 J>QEYeEXjZb^Cnb3?e1D40
-!i122 24
+!i122 26
 R0
 Z8 8decoder.vho
 Z9 Fdecoder.vho
 l0
 L78 1
-V25=8^Sm=]O_:>[<bI_?523
-!s100 F=P[YVXAHX7M6b[6_@Q:a1
+V=ScPka478P`8X;4k>TiK:0
+!s100 ^lCV7Y2RD57DYjkdSH`V[1
 Z10 OV;C;2020.1;71
 32
-Z11 !s110 1668276016
+Z11 !s110 1668278249
 !i10b 1
-Z12 !s108 1668276016.000000
+Z12 !s108 1668278249.000000
 Z13 !s90 -work|work|decoder.vho|
 Z14 !s107 decoder.vho|
 !i113 1
@@ -42,8 +42,8 @@ R4
 R5
 R6
 R7
-DEx4 work 7 decoder 0 22 25=8^Sm=]O_:>[<bI_?523
-!i122 24
+DEx4 work 7 decoder 0 22 =ScPka478P`8X;4k>TiK:0
+!i122 26
 l156
 L101 592
 VoOVi>5e]Bni>@^JT72P>M2
@@ -59,10 +59,10 @@ R14
 R15
 R16
 Edecoder_vhd_vec_tst
-Z17 w1668276014
+Z17 w1668278247
 R5
 R6
-!i122 25
+!i122 27
 R0
 Z18 8decoder_m0_2_test.vwf.vht
 Z19 Fdecoder_m0_2_test.vwf.vht
@@ -84,11 +84,11 @@ Adecoder_arch
 R5
 R6
 Z22 DEx4 work 19 decoder_vhd_vec_tst 0 22 UC=8cP?2BnEdJL9`]A01J0
-!i122 25
+!i122 27
 l47
 Z23 L34 70
-Z24 V;VKKzZeANLiZSXm_>eI5e0
-Z25 !s100 [E?CCGm8KFI8mHGzdU?D?0
+V4@dN>6ioO9momjFo=2JzR0
+!s100 WFEoj65bEfZ^jYFM;?^Cg3
 R10
 32
 R11
@@ -107,7 +107,7 @@ R4
 R5
 R6
 R7
-!i122 24
+!i122 26
 R0
 R8
 R9
@@ -133,7 +133,7 @@ R5
 R6
 R7
 DEx4 work 10 hard_block 0 22 5mcF]JUg7TS^l0EMa_h4A1
-!i122 24
+!i122 26
 l65
 L51 20
 VMkbPfL8S?h^i>Mg3GSGD`1

@@ -206,6 +206,16 @@ SIGNAL("y[0]")
 	PARENT = "y";
 }
 
+SIGNAL("valid")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("m[2]")
 {
 	NODE
@@ -238,7 +248,7 @@ TRANSITION_LIST("y[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -256,7 +266,7 @@ TRANSITION_LIST("y[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -274,7 +284,7 @@ TRANSITION_LIST("y[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -292,7 +302,7 @@ TRANSITION_LIST("y[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -302,6 +312,15 @@ TRANSITION_LIST("y[0]")
 	{
 		REPEAT = 1;
 		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("valid")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -433,6 +452,15 @@ DISPLAY_LINE
 	TREE_INDEX = 12;
 	TREE_LEVEL = 1;
 	PARENT = 9;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "valid";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 13;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

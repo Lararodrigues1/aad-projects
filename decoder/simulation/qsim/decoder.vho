@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "11/12/2022 18:00:15"
+-- DATE "11/12/2022 18:37:28"
 
 -- 
 -- Device: Altera EP4CGX15BF14C6 Package FBGA169
@@ -78,8 +78,8 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY 	decoder IS
     PORT (
 	y : IN std_logic_vector(7 DOWNTO 0);
-	m : OUT std_logic_vector(2 DOWNTO 0);
-	valid : OUT std_logic
+	m : BUFFER std_logic_vector(2 DOWNTO 0);
+	valid : BUFFER std_logic
 	);
 END decoder;
 

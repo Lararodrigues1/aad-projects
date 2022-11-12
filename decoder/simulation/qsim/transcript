@@ -1,7 +1,7 @@
 # do decoder.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:00:16 on Nov 12,2022
+# Start time: 18:37:29 on Nov 12,2022
 # vcom -work work decoder.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -14,20 +14,20 @@
 # -- Compiling architecture structure of hard_block
 # -- Compiling entity decoder
 # -- Compiling architecture structure of decoder
-# End time: 18:00:16 on Nov 12,2022, Elapsed time: 0:00:00
+# End time: 18:37:29 on Nov 12,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:00:16 on Nov 12,2022
+# Start time: 18:37:29 on Nov 12,2022
 # vcom -work work decoder_m0_2_test.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity decoder_vhd_vec_tst
 # -- Compiling architecture decoder_arch of decoder_vhd_vec_tst
-# End time: 18:00:16 on Nov 12,2022, Elapsed time: 0:00:00
+# End time: 18:37:29 on Nov 12,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -c -t 1ps -L cycloneiv -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.decoder_vhd_vec_tst 
-# Start time: 18:00:16 on Nov 12,2022
+# Start time: 18:37:29 on Nov 12,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -43,5 +43,5 @@
 # Loading cycloneiv.cycloneiv_io_ibuf(arch)
 # Loading cycloneiv.cycloneiv_lcell_comb(vital_lcell_comb)
 # after#33
-# End time: 18:00:17 on Nov 12,2022, Elapsed time: 0:00:01
+# End time: 18:37:30 on Nov 12,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

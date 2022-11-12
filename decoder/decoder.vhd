@@ -48,9 +48,12 @@ USE ieee.std_logic_1164.all;
 LIBRARY simpleLogic;
 USE simpleLogic.all;
 
+LIBRARY part_encoder;
+USE part_encoder.all;
+
 entity decoder is
 	PORT(y:		 in STD_LOGIC_VECTOR(7 downto 0);
-		  m:		 out STD_LOGIC_VECTOR(2 downto 0);
+		  m:		 out STD_LOGIC_VECTOR(3 downto 0);
 		  valid : out STD_LOGIC);
 end decoder;
 
@@ -74,9 +77,20 @@ architecture structure of decoder is
 	signal s_c20,s_c21,s_c22,s_c23: std_logic;
 	signal s_n_c20, s_n_c21, s_n_c22, s_n_c23 : std_logic;
 
+	--signals for m3
+	signal s_m3 : std_logic;
+	
 	--signals for valid
 	signal s_m0e_xor_m1e, s_xor_valid, s_valid : std_logic;
 	
+	--signals for popcounter
+	signal s_popc_xor0, s_popc_xor1, s_popc_xor2, s_popc_xor3, s_popc_xor4, s_popc_xor5, s_popc_xor6, s_popc_xor7 : std_logic;
+	signal s_popc_in : std_logic_vector(7 downto 0);
+	signal s_popc_out : std_logic_vector(3 downto 0);
+	signal s_c2c3_xor_out  : std_logic;
+	
+	--signals for encoder
+	signal s_encoder : std_logic_vector(7 downto 0);
 	
 	component mnCalc
 		port(c0,c1,c2,c3: in std_logic;
@@ -101,7 +115,27 @@ architecture structure of decoder is
 	component gateOr2
 		PORT (x1, x2: IN STD_LOGIC;
 				y:      OUT STD_LOGIC);
-	end component;	
+	end component;
+	
+	component part_encoder
+		PORT(m0,m1,m2: in STD_LOGIC;
+			  s: out STD_LOGIC_VECTOR(7 downto 0));
+	end component;
+	
+	component popCounter_8bits
+		PORT(d: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+           c: OUT STD_LOGIC_VECTOR (3 DOWNTO 0));
+	end component;
+	
+	component concatenator8to1
+	  PORT (x0,x1,x2,x3,x4,x5,x6,x7: IN STD_LOGIC;
+			  y:      OUT STD_LOGIC_VECTOR(7 downto 0));
+	end component;
+	
+	component concatenator4to1
+	  PORT (x0,x1,x2,x3: IN STD_LOGIC;
+			  y:      OUT STD_LOGIC_VECTOR(3 downto 0));
+	end component;
 	
 	begin
 		--calc m0(1)
@@ -172,9 +206,30 @@ architecture structure of decoder is
 		m0 : gateAnd2 port map (s_m0_1, s_valid, s_m0);
 		m1 : gateAnd2 port map (s_m1_1, s_valid, s_m1);
 		m2 : gateAnd2 port map (s_m2_1, s_valid, s_m2);
+		
+		--m3
+		
+		--Partial encoder
+		encoder : part_encoder port map (s_m0, s_m1, s_m2, s_encoder);
+		
+		--Pop Counter
+		popCxor0: gateXor2 port map (s_encoder(0), y(0), s_popc_xor0);
+		popCxor1: gateXor2 port map (s_encoder(1), y(1), s_popc_xor1);
+		popCxor2: gateXor2 port map (s_encoder(2), y(2), s_popc_xor2);
+		popCxor3: gateXor2 port map (s_encoder(3), y(3), s_popc_xor3);
+		popCxor4: gateXor2 port map (s_encoder(4), y(4), s_popc_xor4);
+		popCxor5: gateXor2 port map (s_encoder(5), y(5), s_popc_xor5);
+		popCxor6: gateXor2 port map (s_encoder(6), y(6), s_popc_xor6);
+		popCxor7: gateXor2 port map (s_encoder(7), y(7), s_popc_xor7);
+		
+		concatenator: concatenator8to1 port map (s_popc_xor0, s_popc_xor1, s_popc_xor2, s_popc_xor3, s_popc_xor4, s_popc_xor5, s_popc_xor6, s_popc_xor7, s_popc_in);
+		
+		popCounter : popCounter_8bits port map (s_popc_in, s_popc_out);
+		
+		c2c3_xor: gateXor2 port map (s_popc_out(2), s_popc_out(3), s_c2c3_xor_out);
+		
+		m3: gateAnd2 port map (s_c2c3_xor_out, s_valid, s_m3);
 	
-		m(0) <= s_m0;
-		m(1) <= s_m1;
-		m(2) <= s_m2;
+		m_concat: concatenator4to1 port map (s_m0, s_m1, s_m2, s_m3, m);
 	
 end structure;
