@@ -114,7 +114,7 @@ architecture structure of bit_serial_encoder is
 
 	begin
 		--m
-		ff:flipFlopDPET PORT MAP (clk, s_mIn,'1',iNRst,s_ff);
+		ff:flipFlopDPET PORT MAP (clk, mIn,'1',iNRst,s_ff);
 		
 		--XOR of m and k
 		and0: gateAnd2 PORT MAP (s_ff,s_k(0), s_andOut0);
@@ -153,7 +153,6 @@ architecture structure of bit_serial_encoder is
 		control_unit: control PORT MAP (nGRst, clk, s_state, iNRst, iNSetO, s_k, s_clkO);
 		
 		--Output
-		concatenator: concatenator8to1 PORT MAP (s_regQ0, s_regQ1, s_regQ2, s_regQ3, s_regQ4, s_regQ5, s_regQ6, s_regQ7, s_regParIn);	
-		reg_par: ParReg_8bit PORT MAP (iNSetO,'1', s_clkO, s_regParIn, s_x);
-		x <= s_x;
+		concatenator: concatenator8to1 PORT MAP (s_regQ7, s_regQ6, s_regQ5, s_regQ4, s_regQ3, s_regQ2, s_regQ1, s_regQ0, s_regParIn);	
+		reg_par: ParReg_8bit PORT MAP (iNSetO,'1', s_clkO, s_regParIn, x);
 end structure;

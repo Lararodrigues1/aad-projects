@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/13/2022 13:23:10"
+-- Generated on "11/13/2022 18:21:52"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          bit_serial_encoder
 -- 
@@ -43,7 +43,7 @@ COMPONENT bit_serial_encoder
 	clk : IN STD_LOGIC;
 	mIn : IN STD_LOGIC;
 	nGRst : IN STD_LOGIC;
-	x : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	x : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -59,38 +59,24 @@ BEGIN
 -- clk
 t_prcs_clk: PROCESS
 BEGIN
-	clk <= '1';
-	WAIT FOR 5000 ps;
-	FOR i IN 1 TO 99
+	FOR i IN 1 TO 5
 	LOOP
 		clk <= '0';
-		WAIT FOR 5000 ps;
+		WAIT FOR 85000 ps;
 		clk <= '1';
-		WAIT FOR 5000 ps;
+		WAIT FOR 85000 ps;
 	END LOOP;
 	clk <= '0';
+	WAIT FOR 85000 ps;
+	clk <= '1';
 WAIT;
 END PROCESS t_prcs_clk;
 
 -- mIn
 t_prcs_mIn: PROCESS
 BEGIN
-	mIn <= '0';
-	WAIT FOR 60000 ps;
 	mIn <= '1';
-	WAIT FOR 10000 ps;
-	mIn <= '0';
-	WAIT FOR 60000 ps;
-	mIn <= '1';
-	WAIT FOR 10000 ps;
-	mIn <= '0';
-	WAIT FOR 60000 ps;
-	mIn <= '1';
-	WAIT FOR 10000 ps;
-	mIn <= '0';
-	WAIT FOR 60000 ps;
-	mIn <= '1';
-	WAIT FOR 10000 ps;
+	WAIT FOR 510000 ps;
 	mIn <= '0';
 WAIT;
 END PROCESS t_prcs_mIn;

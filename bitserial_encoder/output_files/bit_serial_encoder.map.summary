@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Nov 13 13:20:21 2022
+Analysis & Synthesis Status : Successful - Sun Nov 13 18:19:02 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : bit_serial_encoder
 Top-level Entity Name : bit_serial_encoder
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 11
+Total registers : 20
 Total pins : 11
 Total virtual pins : 0
 Total block memory bits : 0

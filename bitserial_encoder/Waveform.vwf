@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bit_serial_encoder -c bit_serial_encoder --vector_source="C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/Waveform.vwf" --testbench_file="C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bit_serial_encoder -c bit_serial_encoder --vector_source="C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/Waveform.vwf" --testbench_file="C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simulation/qsim/" bit_serial_encoder -c bit_serial_encoder</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simulation/qsim/" bit_serial_encoder -c bit_serial_encoder</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bit_serial_encoder -c bit_serial_encoder --vector_source="D:/Diogo/Universidade/AAD/Hadamard_codes/bitserial_encoder/Waveform.vwf" --testbench_file="D:/Diogo/Universidade/AAD/Hadamard_codes/bitserial_encoder/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bit_serial_encoder -c bit_serial_encoder --vector_source="D:/Diogo/Universidade/AAD/Hadamard_codes/bitserial_encoder/Waveform.vwf" --testbench_file="D:/Diogo/Universidade/AAD/Hadamard_codes/bitserial_encoder/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="D:/Diogo/Universidade/AAD/Hadamard_codes/bitserial_encoder/simulation/qsim/" bit_serial_encoder -c bit_serial_encoder</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="D:/Diogo/Universidade/AAD/Hadamard_codes/bitserial_encoder/simulation/qsim/" bit_serial_encoder -c bit_serial_encoder</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work bit_serial_encoder.vho
@@ -201,14 +201,14 @@ TRANSITION_LIST("clk")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 5.0;
 		NODE
 		{
-			REPEAT = 99;
-			LEVEL 0 FOR 5.0;
-			LEVEL 1 FOR 5.0;
+			REPEAT = 5;
+			LEVEL 0 FOR 85.0;
+			LEVEL 1 FOR 85.0;
 		}
-		LEVEL 0 FOR 5.0;
+		LEVEL 0 FOR 85.0;
+		LEVEL 1 FOR 65.0;
 	}
 }
 
@@ -217,15 +217,8 @@ TRANSITION_LIST("mIn")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 60.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 60.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 60.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 60.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 720.0;
+		LEVEL 1 FOR 510.0;
+		LEVEL 0 FOR 490.0;
 	}
 }
 
