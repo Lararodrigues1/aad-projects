@@ -3,7 +3,6 @@ source_file = 1, C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bit
 source_file = 1, C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd
 source_file = 1, C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd
 source_file = 1, C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd
-source_file = 1, C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/Waveform.vwf
 source_file = 1, c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/timing_b.vhd

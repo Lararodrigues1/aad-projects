@@ -175,10 +175,10 @@ USE ieee.std_logic_1164.all;
 
 ENTITY ParReg_8bit IS
   PORT (nSet: IN STD_LOGIC;
-		  nRst: IN STD_LOGIC;
-        clk:  IN STD_LOGIC;
-        D:    IN STD_LOGIC_VECTOR;
-        Q:    OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
+			nRst: IN STD_LOGIC;
+        clk: IN STD_LOGIC;
+        D: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        Q: OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
 END ParReg_8bit;
 
 ARCHITECTURE structure OF ParReg_8bit IS
@@ -198,3 +198,4 @@ BEGIN
   ff7: flipFlopDPET PORT MAP (clk, D(7), nSet, nRst, Q(7));
 
 END structure;
+

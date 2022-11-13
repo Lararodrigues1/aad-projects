@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "11/13/2022 11:41:34"
+-- DATE "11/13/2022 13:23:11"
 
 -- 
 -- Device: Altera 5CGXFC7C7F23C8 Package FBGA484
@@ -103,21 +103,21 @@ SIGNAL \reg_par|ff6|Q~feeder_combout\ : std_logic;
 SIGNAL \reg_par|ff6|Q~q\ : std_logic;
 SIGNAL \reg_par|ff7|Q~feeder_combout\ : std_logic;
 SIGNAL \reg_par|ff7|Q~q\ : std_logic;
-SIGNAL \ALT_INV_nGRst~input_o\ : std_logic;
-SIGNAL \ALT_INV_clk~input_o\ : std_logic;
-SIGNAL \control_unit|nad2|ALT_INV_y~0_combout\ : std_logic;
-SIGNAL \control_unit|nad4|ALT_INV_y~0_combout\ : std_logic;
-SIGNAL \bincount|ff0|ALT_INV_Q~q\ : std_logic;
-SIGNAL \bincount|ff1|ALT_INV_Q~q\ : std_logic;
-SIGNAL \bincount|ff2|ALT_INV_Q~q\ : std_logic;
-SIGNAL \reg_par|ff7|ALT_INV_Q~q\ : std_logic;
-SIGNAL \reg_par|ff6|ALT_INV_Q~q\ : std_logic;
-SIGNAL \reg_par|ff5|ALT_INV_Q~q\ : std_logic;
-SIGNAL \reg_par|ff4|ALT_INV_Q~q\ : std_logic;
-SIGNAL \reg_par|ff3|ALT_INV_Q~q\ : std_logic;
-SIGNAL \reg_par|ff2|ALT_INV_Q~q\ : std_logic;
-SIGNAL \reg_par|ff1|ALT_INV_Q~q\ : std_logic;
 SIGNAL \reg_par|ff0|ALT_INV_Q~q\ : std_logic;
+SIGNAL \reg_par|ff1|ALT_INV_Q~q\ : std_logic;
+SIGNAL \reg_par|ff2|ALT_INV_Q~q\ : std_logic;
+SIGNAL \reg_par|ff3|ALT_INV_Q~q\ : std_logic;
+SIGNAL \reg_par|ff4|ALT_INV_Q~q\ : std_logic;
+SIGNAL \reg_par|ff5|ALT_INV_Q~q\ : std_logic;
+SIGNAL \reg_par|ff6|ALT_INV_Q~q\ : std_logic;
+SIGNAL \reg_par|ff7|ALT_INV_Q~q\ : std_logic;
+SIGNAL \bincount|ff2|ALT_INV_Q~q\ : std_logic;
+SIGNAL \bincount|ff1|ALT_INV_Q~q\ : std_logic;
+SIGNAL \bincount|ff0|ALT_INV_Q~q\ : std_logic;
+SIGNAL \control_unit|nad4|ALT_INV_y~0_combout\ : std_logic;
+SIGNAL \control_unit|nad2|ALT_INV_y~0_combout\ : std_logic;
+SIGNAL \ALT_INV_clk~input_o\ : std_logic;
+SIGNAL \ALT_INV_nGRst~input_o\ : std_logic;
 
 BEGIN
 
@@ -128,21 +128,21 @@ x <= ww_x;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
-\ALT_INV_nGRst~input_o\ <= NOT \nGRst~input_o\;
-\ALT_INV_clk~input_o\ <= NOT \clk~input_o\;
-\control_unit|nad2|ALT_INV_y~0_combout\ <= NOT \control_unit|nad2|y~0_combout\;
-\control_unit|nad4|ALT_INV_y~0_combout\ <= NOT \control_unit|nad4|y~0_combout\;
-\bincount|ff0|ALT_INV_Q~q\ <= NOT \bincount|ff0|Q~q\;
-\bincount|ff1|ALT_INV_Q~q\ <= NOT \bincount|ff1|Q~q\;
-\bincount|ff2|ALT_INV_Q~q\ <= NOT \bincount|ff2|Q~q\;
-\reg_par|ff7|ALT_INV_Q~q\ <= NOT \reg_par|ff7|Q~q\;
-\reg_par|ff6|ALT_INV_Q~q\ <= NOT \reg_par|ff6|Q~q\;
-\reg_par|ff5|ALT_INV_Q~q\ <= NOT \reg_par|ff5|Q~q\;
-\reg_par|ff4|ALT_INV_Q~q\ <= NOT \reg_par|ff4|Q~q\;
-\reg_par|ff3|ALT_INV_Q~q\ <= NOT \reg_par|ff3|Q~q\;
-\reg_par|ff2|ALT_INV_Q~q\ <= NOT \reg_par|ff2|Q~q\;
-\reg_par|ff1|ALT_INV_Q~q\ <= NOT \reg_par|ff1|Q~q\;
 \reg_par|ff0|ALT_INV_Q~q\ <= NOT \reg_par|ff0|Q~q\;
+\reg_par|ff1|ALT_INV_Q~q\ <= NOT \reg_par|ff1|Q~q\;
+\reg_par|ff2|ALT_INV_Q~q\ <= NOT \reg_par|ff2|Q~q\;
+\reg_par|ff3|ALT_INV_Q~q\ <= NOT \reg_par|ff3|Q~q\;
+\reg_par|ff4|ALT_INV_Q~q\ <= NOT \reg_par|ff4|Q~q\;
+\reg_par|ff5|ALT_INV_Q~q\ <= NOT \reg_par|ff5|Q~q\;
+\reg_par|ff6|ALT_INV_Q~q\ <= NOT \reg_par|ff6|Q~q\;
+\reg_par|ff7|ALT_INV_Q~q\ <= NOT \reg_par|ff7|Q~q\;
+\bincount|ff2|ALT_INV_Q~q\ <= NOT \bincount|ff2|Q~q\;
+\bincount|ff1|ALT_INV_Q~q\ <= NOT \bincount|ff1|Q~q\;
+\bincount|ff0|ALT_INV_Q~q\ <= NOT \bincount|ff0|Q~q\;
+\control_unit|nad4|ALT_INV_y~0_combout\ <= NOT \control_unit|nad4|y~0_combout\;
+\control_unit|nad2|ALT_INV_y~0_combout\ <= NOT \control_unit|nad2|y~0_combout\;
+\ALT_INV_clk~input_o\ <= NOT \clk~input_o\;
+\ALT_INV_nGRst~input_o\ <= NOT \nGRst~input_o\;
 
 -- Location: IOOBUF_X89_Y35_N45
 \x[0]~output\ : cyclonev_io_obuf

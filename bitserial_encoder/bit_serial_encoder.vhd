@@ -38,9 +38,9 @@ use arithmetic.all;
 architecture structure of bit_serial_encoder is
 	signal s_state: STD_LOGIC_VECTOR(2 downto 0);
 	signal s_romIn: STD_LOGIC_VECTOR(1 downto 0);
-	signal iNSet, iNRst,s_Q,s_clk,s_clk0: STD_LOGIC;
+	signal iNSetO, iNRst,s_Q,s_clk,s_clkO: STD_LOGIC;
 	signal s_mIn:STD_LOGIC;
-	
+	 
 	--Saida dos Registos
 	signal s_ff : STD_LOGIC;
 
@@ -49,7 +49,7 @@ architecture structure of bit_serial_encoder is
 	signal s_regParOut : STD_LOGIC_VECTOR(7 downto 0);
 
 	--Sinal Controlo dos ANDs
-	signal s_k: STD_LOGIC_VECTOR(10 downto 3);
+	signal s_k: STD_LOGIC_VECTOR(7 downto 0);
 	signal s_andOut0,s_andOut1,s_andOut2,s_andOut3,s_andOut4,s_andOut5,s_andOut6,s_andOut7: STD_LOGIC;
 
 	signal s_regQ0,s_regQ1,s_regQ2,s_regQ3,s_regQ4,s_regQ5,s_regQ6,s_regQ7 : STD_LOGIC := '0';
@@ -90,18 +90,20 @@ architecture structure of bit_serial_encoder is
 
 	component ParReg_8bit
 		 PORT (nSet: IN STD_LOGIC;
-				 clk: IN STD_LOGIC;
-				 D: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-				 Q: OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
+				 nRst: IN STD_LOGIC;
+				 clk:  IN STD_LOGIC;
+				 D:    IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+				 Q:    OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
 	end component;
-
+	
+	
 	component control
 		PORT (nGRst: IN STD_LOGIC;
 			   clk:   IN STD_LOGIC;
 			   add:   IN STD_LOGIC_VECTOR (2 DOWNTO 0);
 			   nRst:  OUT STD_LOGIC;
 			   nSetO: OUT STD_LOGIC;
-			   f:		OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			   f:		 OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 			   clkO:  OUT STD_LOGIC);
 	end component;
 	
@@ -115,14 +117,14 @@ architecture structure of bit_serial_encoder is
 		ff:flipFlopDPET PORT MAP (clk, s_mIn,'1',iNRst,s_ff);
 		
 		--XOR of m and k
-		and0: gateAnd2 PORT MAP (s_ff,s_k(3), s_andOut0);
-		and1: gateAnd2 PORT MAP (s_ff,s_k(4), s_andOut1);
-		and2: gateAnd2 PORT MAP (s_ff,s_k(5), s_andOut2);
-		and3: gateAnd2 PORT MAP (s_ff,s_k(6), s_andOut3);
-		and4: gateAnd2 PORT MAP (s_ff,s_k(7), s_andOut4);
-		and5: gateAnd2 PORT MAP (s_ff,s_k(8), s_andOut5);
-		and6: gateAnd2 PORT MAP (s_ff,s_k(9), s_andOut6);
-		and7: gateAnd2 PORT MAP (s_ff,s_k(10), s_andOut7);
+		and0: gateAnd2 PORT MAP (s_ff,s_k(0), s_andOut0);
+		and1: gateAnd2 PORT MAP (s_ff,s_k(1), s_andOut1);
+		and2: gateAnd2 PORT MAP (s_ff,s_k(2), s_andOut2);
+		and3: gateAnd2 PORT MAP (s_ff,s_k(3), s_andOut3);
+		and4: gateAnd2 PORT MAP (s_ff,s_k(4), s_andOut4);
+		and5: gateAnd2 PORT MAP (s_ff,s_k(5), s_andOut5);
+		and6: gateAnd2 PORT MAP (s_ff,s_k(6), s_andOut6);
+		and7: gateAnd2 PORT MAP (s_ff,s_k(7), s_andOut7);
 
 		--XOR
 		xor0: gateXor2 PORT MAP (s_andOut0,s_regQ0,s_xorOut0);
@@ -148,12 +150,10 @@ architecture structure of bit_serial_encoder is
 		bincount: binCounter_3bit PORT MAP (iNRst, clk, s_state);
 		
 		--Control Unit with ROM with states
-		control_unit: control PORT MAP (nGRst, clk, s_state, iNRst, iNSet, s_k, s_clk0);
+		control_unit: control PORT MAP (nGRst, clk, s_state, iNRst, iNSetO, s_k, s_clkO);
 		
 		--Output
-		concatenator: concatenator8to1 PORT MAP (s_regQ0, s_regQ1, s_regQ2, s_regQ3, s_regQ4, s_regQ5, s_regQ6, s_regQ7, s_regParIn);
-		
-		reg_par: ParReg_8bit PORT MAP (inSet, s_clk0, s_regParIn, s_x);
+		concatenator: concatenator8to1 PORT MAP (s_regQ0, s_regQ1, s_regQ2, s_regQ3, s_regQ4, s_regQ5, s_regQ6, s_regQ7, s_regParIn);	
+		reg_par: ParReg_8bit PORT MAP (iNSetO,'1', s_clkO, s_regParIn, s_x);
 		x <= s_x;
---		reg_par: ParReg_8bit PORT MAP (iNset, s_clk0,s_regParIn, x);
 end structure;
