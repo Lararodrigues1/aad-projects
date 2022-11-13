@@ -49,3 +49,16 @@ ARCHITECTURE logicFunction OF gateXor2 IS
 BEGIN
   y <= x1 XOR x2;
 END logicFunction;
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY concatenator8to1 IS
+  PORT (x0,x1,x2,x3,x4,x5,x6,x7: IN STD_LOGIC;
+        y:      OUT STD_LOGIC_VECTOR(7 downto 0));
+END concatenator8to1;
+
+ARCHITECTURE logicFunction OF concatenator8to1  IS
+BEGIN
+  y <= x0 & x1 & x2 & x3 & x4 & x5 & x6 & x7;
+END logicFunction;

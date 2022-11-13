@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bit_serial_encoder
-Sat Nov 12 11:28:47 2022
+Sun Nov 13 13:20:21 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,31 +13,27 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "binCounter_3bit:bincount|flipFlopDPET:ff2"
- 10. Port Connectivity Checks: "binCounter_3bit:bincount|flipFlopDPET:ff1"
- 11. Port Connectivity Checks: "binCounter_3bit:bincount|flipFlopDPET:ff0"
- 12. Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff7"
- 13. Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff6"
- 14. Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff5"
- 15. Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff4"
- 16. Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff3"
- 17. Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff2"
- 18. Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff1"
- 19. Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff0"
- 20. Port Connectivity Checks: "parReg_8bit:reg_par"
- 21. Port Connectivity Checks: "flipFlopDPET:reg7"
- 22. Port Connectivity Checks: "flipFlopDPET:reg6"
- 23. Port Connectivity Checks: "flipFlopDPET:reg5"
- 24. Port Connectivity Checks: "flipFlopDPET:reg4"
- 25. Port Connectivity Checks: "flipFlopDPET:reg3"
- 26. Port Connectivity Checks: "flipFlopDPET:reg2"
- 27. Port Connectivity Checks: "flipFlopDPET:reg1"
- 28. Port Connectivity Checks: "flipFlopDPET:reg0"
- 29. Port Connectivity Checks: "flipFlopDPET:ff"
- 30. Post-Synthesis Netlist Statistics for Top Partition
- 31. Elapsed Time Per Partition
- 32. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Port Connectivity Checks: "ParReg_8bit:reg_par"
+ 13. Port Connectivity Checks: "binCounter_3bit:bincount|flipFlopDPET:ff2"
+ 14. Port Connectivity Checks: "binCounter_3bit:bincount|flipFlopDPET:ff1"
+ 15. Port Connectivity Checks: "binCounter_3bit:bincount|flipFlopDPET:ff0"
+ 16. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff7"
+ 17. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff6"
+ 18. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff5"
+ 19. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff4"
+ 20. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff3"
+ 21. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff2"
+ 22. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff1"
+ 23. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff0"
+ 24. Port Connectivity Checks: "ParReg_8bit:pr8"
+ 25. Port Connectivity Checks: "flipFlopDPET:ff"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -64,14 +60,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Nov 12 11:28:47 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sun Nov 13 13:20:21 2022       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; bit_serial_encoder                          ;
 ; Top-level Entity Name           ; bit_serial_encoder                          ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 4                                           ;
+; Total registers                 ; 11                                          ;
+; Total pins                      ; 11                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -180,10 +176,12 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -195,44 +193,91 @@ https://fpgasoftware.intel.com/eula.
 ; bit_serial_encoder.vhd           ; yes             ; User VHDL File  ; C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd ;         ;
 ; storeDev.vhd                     ; yes             ; User VHDL File  ; C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd           ;         ;
 ; simpleLogic.vhd                  ; yes             ; User VHDL File  ; C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd        ;         ;
+; control.vhd                      ; yes             ; User VHDL File  ; C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd            ;         ;
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimate of Logic utilization (ALMs needed) ; 0     ;
-;                                             ;       ;
-; Combinational ALUT usage for logic          ; 0     ;
-;     -- 7 input functions                    ; 0     ;
-;     -- 6 input functions                    ; 0     ;
-;     -- 5 input functions                    ; 0     ;
-;     -- 4 input functions                    ; 0     ;
-;     -- <=3 input functions                  ; 0     ;
-;                                             ;       ;
-; Dedicated logic registers                   ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 4     ;
-;                                             ;       ;
-; Total DSP Blocks                            ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; nGRst ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 4     ;
-; Average fan-out                             ; 0.50  ;
-+---------------------------------------------+-------+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                           ;
++---------------------------------------------+-----------------------------------------+
+; Resource                                    ; Usage                                   ;
++---------------------------------------------+-----------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 7                                       ;
+;                                             ;                                         ;
+; Combinational ALUT usage for logic          ; 6                                       ;
+;     -- 7 input functions                    ; 0                                       ;
+;     -- 6 input functions                    ; 0                                       ;
+;     -- 5 input functions                    ; 2                                       ;
+;     -- 4 input functions                    ; 0                                       ;
+;     -- <=3 input functions                  ; 4                                       ;
+;                                             ;                                         ;
+; Dedicated logic registers                   ; 11                                      ;
+;                                             ;                                         ;
+; I/O pins                                    ; 11                                      ;
+;                                             ;                                         ;
+; Total DSP Blocks                            ; 0                                       ;
+;                                             ;                                         ;
+; Maximum fan-out node                        ; control:control_unit|gateNand2:nad4|y~0 ;
+; Maximum fan-out                             ; 8                                       ;
+; Total fan-out                               ; 63                                      ;
+; Average fan-out                             ; 1.62                                    ;
++---------------------------------------------+-----------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name        ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------------+--------------+
-; |bit_serial_encoder        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 4    ; 0            ; |bit_serial_encoder ; bit_serial_encoder ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                        ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Entity Name        ; Library Name ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------+--------------------+--------------+
+; |bit_serial_encoder           ; 6 (0)               ; 11 (0)                    ; 0                 ; 0          ; 11   ; 0            ; |bit_serial_encoder                                           ; bit_serial_encoder ; work         ;
+;    |ParReg_8bit:reg_par|      ; 0 (0)               ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|ParReg_8bit:reg_par                       ; ParReg_8bit        ; work         ;
+;       |flipFlopDPET:ff0|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|ParReg_8bit:reg_par|flipFlopDPET:ff0      ; flipFlopDPET       ; work         ;
+;       |flipFlopDPET:ff1|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|ParReg_8bit:reg_par|flipFlopDPET:ff1      ; flipFlopDPET       ; work         ;
+;       |flipFlopDPET:ff2|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|ParReg_8bit:reg_par|flipFlopDPET:ff2      ; flipFlopDPET       ; work         ;
+;       |flipFlopDPET:ff3|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|ParReg_8bit:reg_par|flipFlopDPET:ff3      ; flipFlopDPET       ; work         ;
+;       |flipFlopDPET:ff4|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|ParReg_8bit:reg_par|flipFlopDPET:ff4      ; flipFlopDPET       ; work         ;
+;       |flipFlopDPET:ff5|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|ParReg_8bit:reg_par|flipFlopDPET:ff5      ; flipFlopDPET       ; work         ;
+;       |flipFlopDPET:ff6|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|ParReg_8bit:reg_par|flipFlopDPET:ff6      ; flipFlopDPET       ; work         ;
+;       |flipFlopDPET:ff7|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|ParReg_8bit:reg_par|flipFlopDPET:ff7      ; flipFlopDPET       ; work         ;
+;    |binCounter_3bit:bincount| ; 3 (0)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|binCounter_3bit:bincount                  ; binCounter_3bit    ; work         ;
+;       |flipFlopDPET:ff0|      ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|binCounter_3bit:bincount|flipFlopDPET:ff0 ; flipFlopDPET       ; work         ;
+;       |flipFlopDPET:ff1|      ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|binCounter_3bit:bincount|flipFlopDPET:ff1 ; flipFlopDPET       ; work         ;
+;       |flipFlopDPET:ff2|      ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|binCounter_3bit:bincount|flipFlopDPET:ff2 ; flipFlopDPET       ; work         ;
+;    |control:control_unit|     ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|control:control_unit                      ; control            ; work         ;
+;       |gateNand2:nad2|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|control:control_unit|gateNand2:nad2       ; gateNand2          ; work         ;
+;       |gateNand2:nad4|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|control:control_unit|gateNand2:nad4       ; gateNand2          ; work         ;
+;       |gateNor2:nord|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |bit_serial_encoder|control:control_unit|gateNor2:nord        ; gateNor2           ; work         ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                     ;
++----------------------------------------------+---------------------------------------------------------+
+; Register name                                ; Reason for Removal                                      ;
++----------------------------------------------+---------------------------------------------------------+
+; binCounter_3bit:bincount|flipFlopDPET:ff0|nQ ; Merged with binCounter_3bit:bincount|flipFlopDPET:ff0|Q ;
+; flipFlopDPET:ff|Q                            ; Stuck at GND due to stuck port data_in                  ;
+; ParReg_8bit:pr8|flipFlopDPET:ff3|Q           ; Stuck at GND due to stuck port data_in                  ;
+; ParReg_8bit:pr8|flipFlopDPET:ff2|Q           ; Stuck at GND due to stuck port data_in                  ;
+; ParReg_8bit:pr8|flipFlopDPET:ff1|Q           ; Stuck at GND due to stuck port data_in                  ;
+; ParReg_8bit:pr8|flipFlopDPET:ff0|Q           ; Stuck at GND due to stuck port data_in                  ;
+; ParReg_8bit:pr8|flipFlopDPET:ff7|Q           ; Stuck at GND due to stuck port data_in                  ;
+; ParReg_8bit:pr8|flipFlopDPET:ff6|Q           ; Stuck at GND due to stuck port data_in                  ;
+; ParReg_8bit:pr8|flipFlopDPET:ff5|Q           ; Stuck at GND due to stuck port data_in                  ;
+; ParReg_8bit:pr8|flipFlopDPET:ff4|Q           ; Stuck at GND due to stuck port data_in                  ;
+; Total Number of Removed Registers = 10       ;                                                         ;
++----------------------------------------------+---------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                             ;
++-------------------+---------------------------+-------------------------------------------------------------------------+
+; Register name     ; Reason for Removal        ; Registers Removed due to This Register                                  ;
++-------------------+---------------------------+-------------------------------------------------------------------------+
+; flipFlopDPET:ff|Q ; Stuck at GND              ; ParReg_8bit:pr8|flipFlopDPET:ff7|Q, ParReg_8bit:pr8|flipFlopDPET:ff6|Q, ;
+;                   ; due to stuck port data_in ; ParReg_8bit:pr8|flipFlopDPET:ff5|Q, ParReg_8bit:pr8|flipFlopDPET:ff4|Q  ;
++-------------------+---------------------------+-------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -240,14 +285,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 11    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 11    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; ParReg_8bit:reg_par|flipFlopDPET:ff0|Q ; 1       ;
+; ParReg_8bit:reg_par|flipFlopDPET:ff1|Q ; 1       ;
+; ParReg_8bit:reg_par|flipFlopDPET:ff2|Q ; 1       ;
+; ParReg_8bit:reg_par|flipFlopDPET:ff3|Q ; 1       ;
+; ParReg_8bit:reg_par|flipFlopDPET:ff4|Q ; 1       ;
+; ParReg_8bit:reg_par|flipFlopDPET:ff5|Q ; 1       ;
+; ParReg_8bit:reg_par|flipFlopDPET:ff6|Q ; 1       ;
+; ParReg_8bit:reg_par|flipFlopDPET:ff7|Q ; 1       ;
+; Total number of inverted registers = 8 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:reg_par" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; nrst ; Input ; Info     ; Stuck at VCC          ;
++------+-------+----------+-----------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -280,96 +351,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff7"                                               ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; nrst ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff6"                                               ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; nrst ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff5"                                               ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; nrst ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff4"                                               ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; nrst ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff3"                                               ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; nrst ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff2"                                               ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; nrst ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff1"                                               ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; nrst ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "parReg_8bit:reg_par|flipFlopDPET:ff0"                                               ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; nrst ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "parReg_8bit:reg_par"                                                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlopDPET:reg7"                                                                  ;
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff7"                                                   ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -378,7 +360,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlopDPET:reg6"                                                                  ;
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff6"                                                   ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -387,7 +369,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlopDPET:reg5"                                                                  ;
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff5"                                                   ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -396,7 +378,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlopDPET:reg4"                                                                  ;
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff4"                                                   ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -405,7 +387,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlopDPET:reg3"                                                                  ;
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff3"                                                   ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -414,7 +396,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlopDPET:reg2"                                                                  ;
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff2"                                                   ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -423,7 +405,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlopDPET:reg1"                                                                  ;
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff1"                                                   ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -432,12 +414,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "flipFlopDPET:reg0"                                                                  ;
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopDPET:ff0"                                                   ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:pr8" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; nset ; Input ; Info     ; Stuck at VCC      ;
++------+-------+----------+-------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -445,6 +436,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
+; nset ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -454,13 +446,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
-; boundary_port         ; 4                           ;
+; arriav_ff             ; 11                          ;
+;     CLR               ; 11                          ;
+; arriav_lcell_comb     ; 14                          ;
+;     normal            ; 14                          ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 2                           ;
+;         5 data inputs ; 2                           ;
+; boundary_port         ; 11                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 1.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -479,71 +476,71 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat Nov 12 11:28:37 2022
+    Info: Processing started: Sun Nov 13 13:20:07 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bit_serial_encoder -c bit_serial_encoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 4 design units, including 2 entities, in source file bit_serial_encoder.vhd
-    Info (12022): Found design unit 1: rom-behavioral File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 44
-    Info (12022): Found design unit 2: bit_serial_encoder-structure File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 58
+Info (12021): Found 2 design units, including 1 entities, in source file bit_serial_encoder.vhd
+    Info (12022): Found design unit 1: bit_serial_encoder-structure File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 38
     Info (12023): Found entity 1: bit_serial_encoder File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 16
-    Info (12023): Found entity 2: rom File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 39
 Info (12021): Found 12 design units, including 6 entities, in source file storedev.vhd
     Info (12022): Found design unit 1: flipFlopDPET-behavior File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 10
     Info (12022): Found design unit 2: binCounter_3bit-structure File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 40
     Info (12022): Found design unit 3: binCounter_6bit-structure File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 82
     Info (12022): Found design unit 4: parReg_5bit-structure File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 134
     Info (12022): Found design unit 5: parReg_6bit-structure File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 158
-    Info (12022): Found design unit 6: parReg_8bit-structure File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 183
+    Info (12022): Found design unit 6: ParReg_8bit-structure File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 184
     Info (12023): Found entity 1: flipFlopDPET File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 4
     Info (12023): Found entity 2: binCounter_3bit File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 34
     Info (12023): Found entity 3: binCounter_6bit File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 76
     Info (12023): Found entity 4: parReg_5bit File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 127
     Info (12023): Found entity 5: parReg_6bit File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 151
-    Info (12023): Found entity 6: parReg_8bit File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 176
-Info (12021): Found 8 design units, including 4 entities, in source file simplelogic.vhd
+    Info (12023): Found entity 6: ParReg_8bit File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/storeDev.vhd Line: 176
+Info (12021): Found 10 design units, including 5 entities, in source file simplelogic.vhd
     Info (12022): Found design unit 1: gateAnd2-logicFunction File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd Line: 9
     Info (12022): Found design unit 2: gateNand2-logicFunction File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd Line: 22
     Info (12022): Found design unit 3: gateNor2-logicFunction File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd Line: 35
     Info (12022): Found design unit 4: gateXor2-logicFunction File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd Line: 48
+    Info (12022): Found design unit 5: concatenator8to1-logicFunction File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd Line: 61
     Info (12023): Found entity 1: gateAnd2 File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd Line: 4
     Info (12023): Found entity 2: gateNand2 File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd Line: 17
     Info (12023): Found entity 3: gateNor2 File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd Line: 30
     Info (12023): Found entity 4: gateXor2 File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd Line: 43
+    Info (12023): Found entity 5: concatenator8to1 File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/simpleLogic.vhd Line: 56
 Info (12021): Found 4 design units, including 2 entities, in source file control.vhd
     Info (12022): Found design unit 1: contMem-behavior File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd Line: 11
-    Info (12022): Found design unit 2: control-structure File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd Line: 101
+    Info (12022): Found design unit 2: control-structure File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd Line: 47
     Info (12023): Found entity 1: contMem File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd Line: 6
-    Info (12023): Found entity 2: control File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd Line: 92
+    Info (12023): Found entity 2: control File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd Line: 37
 Info (12127): Elaborating entity "bit_serial_encoder" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at bit_serial_encoder.vhd(20): used implicit default value for signal "x" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 20
-Warning (10541): VHDL Signal Declaration warning at bit_serial_encoder.vhd(61): used implicit default value for signal "s_clk" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 61
-Warning (10541): VHDL Signal Declaration warning at bit_serial_encoder.vhd(62): used implicit default value for signal "s_mIn" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 62
-Warning (10036): Verilog HDL or VHDL warning at bit_serial_encoder.vhd(70): object "s_regParOut" assigned a value but never read File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 70
-Warning (10631): VHDL Process Statement warning at bit_serial_encoder.vhd(178): inferring latch(es) for signal or variable "s_romIn", which holds its previous value in one or more paths through the process File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 178
-Info (10041): Inferred latch for "s_romIn[0]" at bit_serial_encoder.vhd(178) File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 178
-Info (10041): Inferred latch for "s_romIn[1]" at bit_serial_encoder.vhd(178) File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 178
-Info (12128): Elaborating entity "rom" for hierarchy "rom:k_rom" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 122
-Info (12128): Elaborating entity "flipFlopDPET" for hierarchy "flipFlopDPET:ff" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 133
-Info (12128): Elaborating entity "gateAnd2" for hierarchy "gateAnd2:and0" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 135
-Info (12128): Elaborating entity "gateXor2" for hierarchy "gateXor2:xor0" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 153
-Info (12128): Elaborating entity "parReg_8bit" for hierarchy "parReg_8bit:reg_par" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 174
-Info (12128): Elaborating entity "binCounter_3bit" for hierarchy "binCounter_3bit:bincount" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 176
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "x" is stuck at GND File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 20
+Warning (10541): VHDL Signal Declaration warning at bit_serial_encoder.vhd(42): used implicit default value for signal "s_mIn" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 42
+Info (12128): Elaborating entity "flipFlopDPET" for hierarchy "flipFlopDPET:ff" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 118
+Info (12128): Elaborating entity "gateAnd2" for hierarchy "gateAnd2:and0" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 121
+Info (12128): Elaborating entity "gateXor2" for hierarchy "gateXor2:xor0" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 131
+Info (12128): Elaborating entity "concatenator8to1" for hierarchy "concatenator8to1:concat" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 141
+Info (12128): Elaborating entity "ParReg_8bit" for hierarchy "ParReg_8bit:pr8" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 142
+Info (12128): Elaborating entity "binCounter_3bit" for hierarchy "binCounter_3bit:bincount" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 153
+Info (12128): Elaborating entity "control" for hierarchy "control:control_unit" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 156
+Info (12128): Elaborating entity "contMem" for hierarchy "control:control_unit|contMem:cMem" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd Line: 63
+Info (12128): Elaborating entity "gateNand2" for hierarchy "control:control_unit|gateNand2:nad1" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd Line: 64
+Info (12128): Elaborating entity "gateNor2" for hierarchy "control:control_unit|gateNor2:nord" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd Line: 68
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "control:control_unit|contMem:cMem|prog" is uninferred due to inappropriate RAM size File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd Line: 15
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer control:control_unit|contMem:cMem|prog~0 File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/control.vhd Line: 15
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "nGRst" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 17
-    Warning (15610): No output dependent on input pin "clk" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 18
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "mIn" File: C:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 19
-Info (21057): Implemented 4 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 1 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4852 megabytes
-    Info: Processing ended: Sat Nov 12 11:28:47 2022
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:22
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 14 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4847 megabytes
+    Info: Processing ended: Sun Nov 13 13:20:21 2022
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:35
 
 
