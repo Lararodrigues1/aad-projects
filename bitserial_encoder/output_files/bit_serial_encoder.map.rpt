@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bit_serial_encoder
-Sun Nov 13 18:19:02 2022
+Sun Nov 13 21:55:00 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -66,7 +66,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Nov 13 18:19:02 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sun Nov 13 21:55:00 2022       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; bit_serial_encoder                          ;
 ; Top-level Entity Name           ; bit_serial_encoder                          ;
@@ -94,6 +94,7 @@ https://fpgasoftware.intel.com/eula.
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
 ; Top-level entity name                                                           ; bit_serial_encoder ; bit_serial_encoder ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                             ; All                ;                    ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
 ; Enable compact report table                                                     ; Off                ; Off                ;
@@ -543,9 +544,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Nov 13 18:18:49 2022
+    Info: Processing started: Sun Nov 13 21:54:48 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bit_serial_encoder -c bit_serial_encoder
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file bit_serial_encoder.vhd
     Info (12022): Found design unit 1: bit_serial_encoder-structure File: D:/Diogo/Universidade/AAD/Hadamard_codes/bitserial_encoder/bit_serial_encoder.vhd Line: 38
@@ -607,10 +607,10 @@ Info (21057): Implemented 34 device resources after synthesis - the final resour
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 8 output pins
     Info (21061): Implemented 23 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4843 megabytes
-    Info: Processing ended: Sun Nov 13 18:19:02 2022
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:27
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4847 megabytes
+    Info: Processing ended: Sun Nov 13 21:55:00 2022
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:26
 
 
