@@ -1,0 +1,150 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/larav/Desktop/Universidade/4ano/AAD/Hadamard_codes/decoder/simulation/qsim
+Edecoder
+Z0 w1668731316
+Z1 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z2 DPx9 cycloneiv 19 cycloneiv_atom_pack 0 22 ]lnLY_M[kb3fWjbKaDc;_1
+Z3 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z6 DPx9 cycloneiv 20 cycloneiv_components 0 22 J>QEYeEXjZb^Cnb3?e1D40
+!i122 102
+Z7 dD:/Diogo/Universidade/AAD/Hadamard_codes/decoder/simulation/qsim
+Z8 8decoder.vho
+Z9 Fdecoder.vho
+l0
+L78 1
+VI8DcG>_3SXZ8^T?O<<GMV0
+!s100 <oWCk4Ef;V^PnmzEK[`;n0
+Z10 OV;C;2020.1;71
+32
+Z11 !s110 1668731318
+!i10b 1
+Z12 !s108 1668731318.000000
+Z13 !s90 -work|work|decoder.vho|
+Z14 !s107 decoder.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 7 decoder 0 22 I8DcG>_3SXZ8^T?O<<GMV0
+!i122 102
+l165
+L102 716
+Vk9RdP6k?_>0g5H5lF10Lz1
+!s100 ^zLT^AHc8IU91R7VXJ;Z81
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Edecoder_vhd_vec_tst
+Z17 w1668731315
+R4
+R5
+!i122 103
+R7
+Z18 8decoder.vwf.vht
+Z19 Fdecoder.vwf.vht
+l0
+L32 1
+VUC=8cP?2BnEdJL9`]A01J0
+!s100 XI^0T5R[M5AaRm62UTPH12
+R10
+32
+R11
+!i10b 1
+R12
+Z20 !s90 -work|work|decoder.vwf.vht|
+Z21 !s107 decoder.vwf.vht|
+!i113 1
+R15
+R16
+Adecoder_arch
+R4
+R5
+Z22 DEx4 work 19 decoder_vhd_vec_tst 0 22 UC=8cP?2BnEdJL9`]A01J0
+!i122 103
+l47
+Z23 L34 70
+Z24 VcTehmTdR4WjJFbgZjCL_23
+Z25 !s100 _TP[dIeI1@@Al[]c:Rg;V2
+R10
+32
+R11
+!i10b 1
+R12
+R20
+R21
+!i113 1
+R15
+R16
+Ehard_block
+R0
+R1
+R2
+R3
+R4
+R5
+R6
+!i122 102
+R7
+R8
+R9
+l0
+L35 1
+V5mcF]JUg7TS^l0EMa_h4A1
+!s100 Q?IbEnM>aW3cc=hi`GCc71
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 10 hard_block 0 22 5mcF]JUg7TS^l0EMa_h4A1
+!i122 102
+l65
+L51 20
+VMkbPfL8S?h^i>Mg3GSGD`1
+!s100 O>:lWQfHCcIaXgQ<=Tgn10
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16

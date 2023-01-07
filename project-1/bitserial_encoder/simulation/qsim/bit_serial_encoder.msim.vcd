@@ -1,0 +1,489 @@
+$comment
+	File created using the following command:
+		vcd file bit_serial_encoder.msim.vcd -direction
+$end
+$date
+	Thu Nov 17 19:22:56 2022
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module bit_serial_encoder_vhd_vec_tst $end
+$var wire 1 ! clk $end
+$var wire 1 " mIn $end
+$var wire 1 # nGRst $end
+$var wire 1 $ x [7] $end
+$var wire 1 % x [6] $end
+$var wire 1 & x [5] $end
+$var wire 1 ' x [4] $end
+$var wire 1 ( x [3] $end
+$var wire 1 ) x [2] $end
+$var wire 1 * x [1] $end
+$var wire 1 + x [0] $end
+
+$scope module i1 $end
+$var wire 1 , gnd $end
+$var wire 1 - vcc $end
+$var wire 1 . unknown $end
+$var wire 1 / devoe $end
+$var wire 1 0 devclrn $end
+$var wire 1 1 devpor $end
+$var wire 1 2 ww_devoe $end
+$var wire 1 3 ww_devclrn $end
+$var wire 1 4 ww_devpor $end
+$var wire 1 5 ww_nGRst $end
+$var wire 1 6 ww_clk $end
+$var wire 1 7 ww_mIn $end
+$var wire 1 8 ww_x [7] $end
+$var wire 1 9 ww_x [6] $end
+$var wire 1 : ww_x [5] $end
+$var wire 1 ; ww_x [4] $end
+$var wire 1 < ww_x [3] $end
+$var wire 1 = ww_x [2] $end
+$var wire 1 > ww_x [1] $end
+$var wire 1 ? ww_x [0] $end
+$var wire 1 @ \~QUARTUS_CREATED_GND~I_combout\ $end
+$var wire 1 A \clk~input_o\ $end
+$var wire 1 B \clk~inputCLKENA0_outclk\ $end
+$var wire 1 C \nGRst~input_o\ $end
+$var wire 1 D \control_unit|nad2|y~0_combout\ $end
+$var wire 1 E \bincount|ff1|Q~q\ $end
+$var wire 1 F \bincount|ff0|Q~0_combout\ $end
+$var wire 1 G \bincount|ff0|Q~q\ $end
+$var wire 1 H \bincount|ff1|Q~0_combout\ $end
+$var wire 1 I \bincount|ff1|Q~DUPLICATE_q\ $end
+$var wire 1 J \bincount|ff2|Q~0_combout\ $end
+$var wire 1 K \bincount|ff2|Q~q\ $end
+$var wire 1 L \control_unit|nord|y~0_combout\ $end
+$var wire 1 M \mIn~input_o\ $end
+$var wire 1 N \ff|Q~q\ $end
+$var wire 1 O \reg0|Q~0_combout\ $end
+$var wire 1 P \reg0|Q~q\ $end
+$var wire 1 Q \reg_par|ff0|Q~0_combout\ $end
+$var wire 1 R \control_unit|nad4|y~0_combout\ $end
+$var wire 1 S \reg_par|ff0|Q~q\ $end
+$var wire 1 T \reg1|Q~0_combout\ $end
+$var wire 1 U \reg1|Q~q\ $end
+$var wire 1 V \reg_par|ff1|Q~0_combout\ $end
+$var wire 1 W \reg_par|ff1|Q~q\ $end
+$var wire 1 X \reg2|Q~0_combout\ $end
+$var wire 1 Y \reg2|Q~q\ $end
+$var wire 1 Z \reg_par|ff2|Q~0_combout\ $end
+$var wire 1 [ \reg_par|ff2|Q~q\ $end
+$var wire 1 \ \reg3|Q~0_combout\ $end
+$var wire 1 ] \reg3|Q~q\ $end
+$var wire 1 ^ \reg_par|ff3|Q~0_combout\ $end
+$var wire 1 _ \reg_par|ff3|Q~q\ $end
+$var wire 1 ` \reg4|Q~0_combout\ $end
+$var wire 1 a \reg4|Q~q\ $end
+$var wire 1 b \reg_par|ff4|Q~0_combout\ $end
+$var wire 1 c \reg_par|ff4|Q~q\ $end
+$var wire 1 d \reg5|Q~0_combout\ $end
+$var wire 1 e \reg5|Q~q\ $end
+$var wire 1 f \reg_par|ff5|Q~0_combout\ $end
+$var wire 1 g \reg_par|ff5|Q~q\ $end
+$var wire 1 h \reg6|Q~0_combout\ $end
+$var wire 1 i \reg6|Q~q\ $end
+$var wire 1 j \reg_par|ff6|Q~0_combout\ $end
+$var wire 1 k \reg_par|ff6|Q~q\ $end
+$var wire 1 l \reg7|Q~0_combout\ $end
+$var wire 1 m \reg7|Q~q\ $end
+$var wire 1 n \reg_par|ff7|Q~0_combout\ $end
+$var wire 1 o \reg_par|ff7|Q~q\ $end
+$var wire 1 p \bincount|ff1|ALT_INV_Q~DUPLICATE_q\ $end
+$var wire 1 q \ALT_INV_nGRst~input_o\ $end
+$var wire 1 r \ALT_INV_clk~input_o\ $end
+$var wire 1 s \control_unit|nad2|ALT_INV_y~0_combout\ $end
+$var wire 1 t \ff|ALT_INV_Q~q\ $end
+$var wire 1 u \reg7|ALT_INV_Q~q\ $end
+$var wire 1 v \reg6|ALT_INV_Q~q\ $end
+$var wire 1 w \reg5|ALT_INV_Q~q\ $end
+$var wire 1 x \reg4|ALT_INV_Q~q\ $end
+$var wire 1 y \reg3|ALT_INV_Q~q\ $end
+$var wire 1 z \reg2|ALT_INV_Q~q\ $end
+$var wire 1 { \reg1|ALT_INV_Q~q\ $end
+$var wire 1 | \control_unit|nad4|ALT_INV_y~0_combout\ $end
+$var wire 1 } \bincount|ff1|ALT_INV_Q~q\ $end
+$var wire 1 ~ \bincount|ff0|ALT_INV_Q~q\ $end
+$var wire 1 !! \bincount|ff2|ALT_INV_Q~q\ $end
+$var wire 1 "! \reg0|ALT_INV_Q~q\ $end
+$var wire 1 #! \reg_par|ff7|ALT_INV_Q~q\ $end
+$var wire 1 $! \reg_par|ff6|ALT_INV_Q~q\ $end
+$var wire 1 %! \reg_par|ff5|ALT_INV_Q~q\ $end
+$var wire 1 &! \reg_par|ff4|ALT_INV_Q~q\ $end
+$var wire 1 '! \reg_par|ff3|ALT_INV_Q~q\ $end
+$var wire 1 (! \reg_par|ff2|ALT_INV_Q~q\ $end
+$var wire 1 )! \reg_par|ff1|ALT_INV_Q~q\ $end
+$var wire 1 *! \reg_par|ff0|ALT_INV_Q~q\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+1"
+1#
+0,
+1-
+x.
+1/
+10
+11
+12
+13
+14
+15
+06
+17
+x@
+0A
+0B
+1C
+0D
+0E
+1F
+0G
+0H
+0I
+0J
+0K
+0L
+1M
+0N
+0O
+0P
+1Q
+0R
+0S
+0T
+0U
+1V
+0W
+0X
+0Y
+1Z
+0[
+0\
+0]
+1^
+0_
+0`
+0a
+1b
+0c
+0d
+0e
+1f
+0g
+0h
+0i
+1j
+0k
+0l
+0m
+1n
+0o
+1p
+0q
+1r
+1s
+1t
+1u
+1v
+1w
+1x
+1y
+1z
+1{
+1|
+1}
+1~
+1!!
+1"!
+1#!
+1$!
+1%!
+1&!
+1'!
+1(!
+1)!
+1*!
+1$
+1%
+1&
+1'
+1(
+1)
+1*
+1+
+18
+19
+1:
+1;
+1<
+1=
+1>
+1?
+$end
+#85000
+1!
+16
+1A
+1B
+0r
+1R
+1G
+1N
+0t
+0~
+0|
+0F
+1H
+0R
+1O
+1X
+1`
+1h
+1|
+#170000
+0!
+06
+0A
+0B
+1r
+#255000
+1!
+16
+1A
+1B
+0r
+1E
+0G
+1I
+1P
+1Y
+1a
+1i
+0v
+0x
+0z
+0"!
+0p
+1~
+0}
+1F
+1T
+1d
+0O
+0Q
+0Z
+0`
+0b
+0j
+#340000
+0!
+06
+0A
+0B
+1r
+#425000
+1!
+16
+1A
+1B
+0r
+1G
+0P
+1U
+0a
+1e
+0w
+1x
+0{
+1"!
+0~
+0F
+0H
+1J
+0X
+1\
+1O
+1Q
+0T
+0V
+1b
+0f
+#510000
+0!
+06
+0A
+0B
+1r
+#595000
+1!
+16
+1A
+1B
+0r
+0E
+0G
+0I
+1K
+1P
+0U
+0Y
+1]
+0y
+1z
+1{
+0"!
+0!!
+1p
+1~
+1}
+1F
+1`
+0d
+0h
+1l
+0O
+0Q
+1T
+1V
+1X
+1Z
+0\
+0^
+#680000
+0!
+0"
+06
+07
+0M
+0A
+0B
+1r
+#765000
+1!
+16
+1A
+1B
+0r
+1G
+0N
+0P
+1U
+1Y
+0]
+1a
+0e
+0i
+1m
+0u
+1v
+1w
+0x
+1y
+0z
+0{
+1"!
+1t
+0~
+0F
+1H
+1Q
+0V
+0Z
+1^
+0b
+1f
+1j
+0n
+#850000
+0!
+06
+0A
+0B
+1r
+1L
+1S
+1_
+1g
+1k
+0$!
+0%!
+0'!
+0*!
+0?
+0<
+0:
+09
+0+
+0(
+0&
+0%
+#935000
+1!
+16
+1A
+1B
+0r
+0L
+1E
+0G
+1I
+0p
+1~
+0}
+1F
+1R
+1D
+0s
+0|
+0S
+0_
+0g
+0k
+0E
+0I
+0K
+0U
+0Y
+0a
+0m
+1u
+1x
+1z
+1{
+1!!
+1p
+1}
+1$!
+1%!
+1'!
+1*!
+0H
+0D
+0J
+0T
+1V
+0X
+1Z
+0`
+1b
+0l
+1n
+1s
+1?
+1<
+1:
+19
+1+
+1(
+1&
+1%
+#1000000

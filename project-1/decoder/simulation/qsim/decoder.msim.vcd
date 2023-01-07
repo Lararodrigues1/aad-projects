@@ -1,0 +1,178 @@
+$comment
+	File created using the following command:
+		vcd file decoder.msim.vcd -direction
+$end
+$date
+	Fri Nov 18 00:28:39 2022
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module decoder_vhd_vec_tst $end
+$var wire 1 ! m [3] $end
+$var wire 1 " m [2] $end
+$var wire 1 # m [1] $end
+$var wire 1 $ m [0] $end
+$var wire 1 % valid $end
+$var wire 1 & y [7] $end
+$var wire 1 ' y [6] $end
+$var wire 1 ( y [5] $end
+$var wire 1 ) y [4] $end
+$var wire 1 * y [3] $end
+$var wire 1 + y [2] $end
+$var wire 1 , y [1] $end
+$var wire 1 - y [0] $end
+
+$scope module i1 $end
+$var wire 1 . gnd $end
+$var wire 1 / vcc $end
+$var wire 1 0 unknown $end
+$var wire 1 1 devoe $end
+$var wire 1 2 devclrn $end
+$var wire 1 3 devpor $end
+$var wire 1 4 ww_devoe $end
+$var wire 1 5 ww_devclrn $end
+$var wire 1 6 ww_devpor $end
+$var wire 1 7 ww_y [7] $end
+$var wire 1 8 ww_y [6] $end
+$var wire 1 9 ww_y [5] $end
+$var wire 1 : ww_y [4] $end
+$var wire 1 ; ww_y [3] $end
+$var wire 1 < ww_y [2] $end
+$var wire 1 = ww_y [1] $end
+$var wire 1 > ww_y [0] $end
+$var wire 1 ? ww_m [3] $end
+$var wire 1 @ ww_m [2] $end
+$var wire 1 A ww_m [1] $end
+$var wire 1 B ww_m [0] $end
+$var wire 1 C ww_valid $end
+$var wire 1 D \m[0]~output_o\ $end
+$var wire 1 E \m[1]~output_o\ $end
+$var wire 1 F \m[2]~output_o\ $end
+$var wire 1 G \m[3]~output_o\ $end
+$var wire 1 H \valid~output_o\ $end
+$var wire 1 I \y[0]~input_o\ $end
+$var wire 1 J \y[6]~input_o\ $end
+$var wire 1 K \y[4]~input_o\ $end
+$var wire 1 L \y[2]~input_o\ $end
+$var wire 1 M \m2_1|finalxor|y~0_combout\ $end
+$var wire 1 N \y[1]~input_o\ $end
+$var wire 1 O \y[3]~input_o\ $end
+$var wire 1 P \y[7]~input_o\ $end
+$var wire 1 Q \y[5]~input_o\ $end
+$var wire 1 R \m2_1_xor_m2_0|y~0_combout\ $end
+$var wire 1 S \m2_1_xor_m2_0|y~1_combout\ $end
+$var wire 1 T \m2_1|finalxor|y~1_combout\ $end
+$var wire 1 U \m2_1|finalxor|y~2_combout\ $end
+$var wire 1 V \m0_1_xor_m0_0|y~1_combout\ $end
+$var wire 1 W \m0_1|finalxor|y~0_combout\ $end
+$var wire 1 X \m0_1_xor_m0_0|y~0_combout\ $end
+$var wire 1 Y \m0_1|finalxor|y~1_combout\ $end
+$var wire 1 Z \m0_1|finalxor|y~2_combout\ $end
+$var wire 1 [ \m1_1_xor_m1_0|y~0_combout\ $end
+$var wire 1 \ \m1_1|finalxor|y~0_combout\ $end
+$var wire 1 ] \m1_1_xor_m1_0|y~1_combout\ $end
+$var wire 1 ^ \m1_1|finalxor|y~1_combout\ $end
+$var wire 1 _ \m1_1|finalxor|y~2_combout\ $end
+$var wire 1 ` \m1_1_xor_m1_0|y~2_combout\ $end
+$var wire 1 a \m2_1_xor_m2_0|y~2_combout\ $end
+$var wire 1 b \m0_1_xor_m0_0|y~2_combout\ $end
+$var wire 1 c \xor_valid|y~0_combout\ $end
+$var wire 1 d \m1|y~0_combout\ $end
+$var wire 1 e \m3|y~2_combout\ $end
+$var wire 1 f \m3|y~3_combout\ $end
+$var wire 1 g \m3|y~4_combout\ $end
+$var wire 1 h \m2|y~combout\ $end
+$var wire 1 i \m3|y~0_combout\ $end
+$var wire 1 j \m0|y~0_combout\ $end
+$var wire 1 k \m3|y~1_combout\ $end
+$var wire 1 l \m3|y~5_combout\ $end
+$var wire 1 m \xor_valid|ALT_INV_y~0_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1%
+0.
+1/
+x0
+11
+12
+13
+14
+15
+16
+1C
+0D
+1E
+0F
+0G
+1H
+1I
+1J
+1K
+0L
+0M
+0N
+0O
+1P
+1Q
+0R
+0S
+1T
+1U
+0V
+0W
+1X
+0Y
+0Z
+1[
+0\
+0]
+0^
+0_
+1`
+1a
+1b
+0c
+0d
+1e
+1f
+0g
+1h
+1i
+0j
+1k
+0l
+1m
+1&
+1'
+1(
+1)
+0*
+0+
+0,
+1-
+17
+18
+19
+1:
+0;
+0<
+0=
+1>
+0?
+0@
+1A
+0B
+0!
+0"
+1#
+0$
+$end
+#1000000
